@@ -1,0 +1,152 @@
+aid: overjet
+url: https://raw.githubusercontent.com/api-evangelist/overjet/refs/heads/main/apis.yml
+name: Overjet
+kind: company
+description: Overjet is a dental AI platform that applies FDA-cleared computer vision
+  to dental radiographs (bitewings, periapicals, panoramics, and CBCT) to detect,
+  outline, and quantify oral health conditions - caries, calculus, bone level and
+  bone loss, periapical radiolucencies (PARLs), and anatomical structures - for
+  dental providers, DSOs, and insurance payers. Overjet is not a self-serve public
+  API. Its AI is delivered as OEM/partner integrations embedded into imaging systems
+  and practice management software (Open Dental, Dentrix, Dentrix Ascend/Enterprise,
+  Eaglesoft, Oryx, CareStack, and others) via connector software and DICOM image
+  routing, plus payer-side products for insurance verification and claim review
+  (ReviewPASS). Any programmatic access is arranged privately under a partner or
+  enterprise agreement; there is no public developer portal or published API
+  reference as of this catalog entry. The APIs listed below are logical,
+  honestly-modeled surfaces (endpointsModeled) representing the capabilities Overjet
+  exposes to integration partners, not documented public endpoints.
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+tags:
+- Dental
+- Dental AI
+- Healthcare
+- Radiograph Analysis
+- Computer Vision
+- Medical Imaging
+- Caries Detection
+- Insurance
+- Partner API
+- Gated
+created: '2026-07-05'
+modified: '2026-07-05'
+specificationVersion: '0.19'
+apis:
+- aid: overjet:overjet-image-analysis-api
+  name: Overjet Vision AI Image Analysis API
+  tags:
+  - Image Analysis
+  - Radiographs
+  - Computer Vision
+  - DICOM
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://www.overjet.com/blog/guide-to-dental-software-integrations
+  endpointsModeled: true
+  accessModel: partner-gated
+  properties:
+  - url: https://www.overjet.com/blog/guide-to-dental-software-integrations
+    type: Documentation
+  - url: https://www.overjet.com/blog/how-to-integrate-dental-ai-software-into-your-practice
+    type: Documentation
+  description: Modeled surface for submitting dental radiographs (bitewing, periapical,
+    panoramic, CBCT) to Overjet's FDA-cleared Vision AI for analysis. In production
+    this is fed by connector software and DICOM image routing from imaging systems
+    rather than a public HTTP endpoint; images are routed to Overjet's cloud, analyzed
+    in roughly 2-3 minutes, and results returned to the practice management or
+    imaging UI. No public endpoint, base URL, or authentication scheme is documented
+    - fields here are honestly modeled from Overjet's integration and imaging
+    descriptions.
+- aid: overjet:overjet-detections-api
+  name: Overjet Detections & Findings API
+  tags:
+  - Detections
+  - Findings
+  - Caries
+  - Bone Loss
+  - PARL
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://www.overjet.com/
+  endpointsModeled: true
+  accessModel: partner-gated
+  properties:
+  - url: https://www.overjet.com/
+    type: Documentation
+  description: Modeled surface for retrieving structured AI findings for an analyzed
+    radiograph - detected and outlined caries, calculus, bone level and bone-loss
+    measurements, periapical radiolucencies (PARLs), and anatomical structures, with
+    per-finding confidence and pixel-level segmentation used to overlay annotations
+    in the clinical UI. Represents the results consumed by partner PMS/imaging
+    integrations; not a documented public endpoint.
+- aid: overjet:overjet-insurance-verification-api
+  name: Overjet Insurance Verification API
+  tags:
+  - Insurance
+  - Eligibility
+  - Benefits
+  - Payers
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://www.overjet.com/blog/ai-for-checking-dental-insurance-guide
+  endpointsModeled: true
+  accessModel: partner-gated
+  properties:
+  - url: https://www.overjet.com/blog/ai-for-checking-dental-insurance-guide
+    type: Documentation
+  description: Modeled surface for Overjet's automated dental insurance verification -
+    checking patient eligibility and benefits and returning coverage details for a
+    practice. Delivered as a product feature and payer integration rather than a
+    public developer API; endpoints and payloads are honestly modeled from Overjet's
+    insurance-verification product descriptions.
+- aid: overjet:overjet-claims-review-api
+  name: Overjet Claims Review (ReviewPASS) API
+  tags:
+  - Claims
+  - Adjudication
+  - ReviewPASS
+  - Payers
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://www.overjet.com/
+  endpointsModeled: true
+  accessModel: partner-gated
+  properties:
+  - url: https://www.overjet.com/
+    type: Documentation
+  description: Modeled payer-side surface for AI-assisted dental claim review -
+    Overjet's ReviewPASS applies Vision AI to attached radiographs to support
+    automated approvals and reduce manual review and downcoding disputes. Available
+    to insurance payers under enterprise agreement; not a documented public endpoint.
+- aid: overjet:overjet-analytics-api
+  name: Overjet DSO Analytics API
+  tags:
+  - Analytics
+  - DSO
+  - Reporting
+  - Practices
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://www.overjet.com/
+  endpointsModeled: true
+  accessModel: partner-gated
+  properties:
+  - url: https://www.overjet.com/
+    type: Documentation
+  description: Modeled surface for Overjet's DSO analytics - clinical and operational
+    insights aggregated across practices and providers (diagnostic consistency,
+    treatment acceptance, and utilization). Provided as a product and enterprise
+    reporting capability; endpoints are honestly modeled, not publicly documented.
+common:
+- type: LinkedIn
+  url: https://www.linkedin.com/company/overjet
+- type: Website
+  url: https://www.overjet.com/
+- type: Documentation
+  url: https://www.overjet.com/resources
+- type: SignIn
+  url: https://clinic.overjet.ai/signin
+- type: Demo
+  url: https://info.overjet.com/hp-book-your-demo
+- type: TrustCenter
+  url: https://www.overjet.com/legal/trust-center
+- url: https://www.overjet.com/blog
+  type: Blog
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

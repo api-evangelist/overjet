@@ -1,0 +1,80 @@
+aid: overjet
+name: Overjet
+review:
+  question: Does Overjet expose a documented public WebSocket API?
+  answer: false
+  date: '2026-07-05'
+  reviewer: API Evangelist
+  asyncapiSpecCreated: false
+  asyncapiScopeNote: |
+    No AsyncAPI document was authored. Overjet does not publish any public API -
+    REST, SSE, or WebSocket - so there is no documented server-push transport on
+    Overjet's own surface to model. Overjet's AI is delivered through OEM/partner
+    integrations (connector software plus DICOM image routing into imaging and
+    practice management systems), and its analysis pipeline is asynchronous
+    (radiographs are routed to the cloud and results returned in ~2-3 minutes),
+    but none of that is exposed as a documented public WebSocket or streaming
+    API. There is nothing public to model.
+findings:
+  summary: |
+    Overjet does not publish a documented public WebSocket API. In fact, Overjet
+    does not publish a public developer API of any kind. There is no
+    developer.overjet.com, no public API reference, no published base URL, and no
+    self-serve API keys as of the review date. Overjet is a dental AI platform
+    (FDA-cleared Vision AI for radiograph analysis, IRIS imaging, a Voice AI
+    suite, insurance verification, and ReviewPASS claim review) delivered as
+    OEM/partner integrations embedded into imaging systems and practice
+    management software (Open Dental, Dentrix, Dentrix Ascend/Enterprise,
+    Eaglesoft, Oryx, CareStack) via connector software and DICOM image routing.
+    Any programmatic access is arranged privately under partner or enterprise
+    agreement. No realtime, bidirectional, or streaming WebSocket (ws:// or
+    wss://) endpoint is documented anywhere on Overjet's public web presence.
+  accessModel: partner-gated
+  publicApiDocumented: false
+  developerPortal: none
+  endpointsModeled: true
+  transports:
+    - protocol: WebSocket
+      scheme: wss
+      documented: false
+      note: No WebSocket endpoint is documented anywhere on Overjet's public site as of the review date.
+    - protocol: REST
+      scheme: https
+      documented: false
+      note: No public REST API reference or base URL is published; programmatic access is partner/enterprise-gated.
+    - protocol: DICOM Routing
+      scheme: dicom
+      documented: false
+      note: Radiographs are routed from imaging workstations to Overjet's cloud via connector software and DICOM routing rules. This is a partner integration mechanism, not a documented public API or WebSocket.
+  endpointsConfirmedRest: []
+  pricing:
+    publiclyListed: false
+    model: contact-sales, per-practice / per-organization
+    note: Third-party reviews cite roughly $1,000-$2,000+ per month for smaller practices, scaling with size and features. No public plans document exists.
+sources:
+  - url: https://www.overjet.com/
+    type: Website
+    note: Product overview (Vision AI, IRIS, Voice AI, Insurance Verification, ReviewPASS, DSO Analytics). No API or WebSocket mentioned; login and demo links only.
+  - url: https://www.overjet.com/blog/guide-to-dental-software-integrations
+    type: Documentation
+    note: Describes integration model - connector software and DICOM routing into PMS/imaging systems. No public API or WebSocket.
+  - url: https://www.overjet.com/blog/how-to-integrate-dental-ai-software-into-your-practice
+    type: Documentation
+    note: Integration takes days, works within existing PMS; no self-serve API or WebSocket described.
+  - url: https://www.overjet.com/blog/ai-for-checking-dental-insurance-guide
+    type: Documentation
+    note: Insurance verification described as a product feature, not a public developer API.
+  - url: https://developer.overjet.com
+    type: DeveloperPortal
+    note: Does not resolve (DNS ENOTFOUND). No developer portal exists.
+actions:
+  asyncapiPath: null
+  apisYmlUpdated: true
+  reason: |
+    No WebSocket protocol surface exists, and Overjet publishes no public API of
+    any kind - no REST reference, no base URL, no developer portal. The catalog
+    entry documents Overjet honestly as a partner-gated dental AI platform with
+    logical, modeled API surfaces (endpointsModeled: true, accessModel:
+    partner-gated). No AsyncAPI document was created because there is no
+    documented public transport - WebSocket or otherwise - on Overjet's own API
+    to model.
