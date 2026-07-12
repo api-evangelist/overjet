@@ -133,6 +133,8 @@ apis:
     treatment acceptance, and utilization). Provided as a product and enterprise
     reporting capability; endpoints are honestly modeled, not publicly documented.
 common:
+- type: DomainSecurity
+  url: security/overjet-domain-security.yml
 - type: LinkedIn
   url: https://www.linkedin.com/company/overjet
 - type: Website
