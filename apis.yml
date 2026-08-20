@@ -33,6 +33,17 @@ tags:
 - Dental AI
 - Healthcare
 - Radiograph Analysis
+- Computer-Vision
+- Medical Imaging
+- Caries Detection
+- Insurance
+- Partner API
+- Gated
+tags_raw:
+- Dental
+- Dental AI
+- Healthcare
+- Radiograph Analysis
 - Computer Vision
 - Medical Imaging
 - Caries Detection
@@ -46,6 +57,11 @@ apis:
 - aid: overjet:overjet-image-analysis-api
   name: Overjet Vision AI Image Analysis API
   tags:
+  - Image Analysis
+  - Radiographs
+  - Computer-Vision
+  - DICOM
+  tags_raw:
   - Image Analysis
   - Radiographs
   - Computer Vision
