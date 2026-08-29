@@ -16,6 +16,17 @@ description: Overjet is a dental AI platform that applies FDA-cleared computer v
   reference as of this catalog entry. The APIs listed below are logical,
   honestly-modeled surfaces (endpointsModeled) representing the capabilities Overjet
   exposes to integration partners, not documented public endpoints.
+deliveryModel:
+  model: unknown
+  open_source: false
+  commercial: false
+  callable_host: false
+  label: Delivery model not determined — needs a product licence on record
+  confidence: low
+  source:
+  - none
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: unknown
