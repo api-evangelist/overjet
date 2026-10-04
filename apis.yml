@@ -44,7 +44,7 @@ tags:
 - Dental AI
 - Healthcare
 - Radiograph Analysis
-- Computer-Vision
+- Computer Vision
 - Medical Imaging
 - Caries Detection
 - Insurance
@@ -61,6 +61,7 @@ tags_raw:
 - Insurance
 - Partner API
 - Gated
+- Computer-Vision
 created: '2026-07-05'
 modified: '2026-07-05'
 specificationVersion: '0.23'
@@ -70,13 +71,14 @@ apis:
   tags:
   - Image Analysis
   - Radiographs
-  - Computer-Vision
+  - Computer Vision
   - DICOM
   tags_raw:
   - Image Analysis
   - Radiographs
   - Computer Vision
   - DICOM
+  - Computer-Vision
   image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
   humanURL: https://www.overjet.com/blog/guide-to-dental-software-integrations
   endpointsModeled: true
