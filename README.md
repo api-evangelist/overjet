@@ -1,4 +1,4 @@
-# Overjet (overjet)
+# Overjet
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,81 +64,90 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Overjet is a dental AI platform that applies FDA-cleared computer vision to dental radiographs (bitewings, periapicals, panoramics, and CBCT) to detect, outline, and quantify oral health conditions - caries, calculus, bone level and bone loss, periapical radiolucencies (PARLs), and anatomical structures - for dental providers, DSOs, and insurance payers. Founded by MIT and Harvard researchers, Overjet also offers IRIS imaging, a Voice AI documentation suite, automated insurance verification, and payer-side claim review (ReviewPASS).
+Overjet is a dental AI platform that applies FDA-cleared computer vision to dental radiographs (bitewings, periapicals, panoramics, and CBCT) to detect, outline, and quantify oral health conditions - caries, calculus, bone level and bone loss, periapical radiolucencies (PARLs), and anatomical structures - for dental providers, DSOs, and insurance payers. Overjet is not a self-serve public API. Its AI is delivered as OEM/partner integrations embedded into imaging systems and practice management software (Open Dental, Dentrix, Dentrix Ascend/Enterprise, Eaglesoft, Oryx, CareStack, and others) via connector software and DICOM image routing, plus payer-side products for insurance verification and claim review (ReviewPASS). Any programmatic access is arranged privately under a partner or enterprise agreement; there is no public developer portal or published API reference as of this catalog entry. The APIs listed below are logical, honestly-modeled surfaces (endpointsModeled) representing the capabilities Overjet exposes to integration partners, not documented public endpoints.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/overjet/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/overjet/refs/heads/main/apis.yml)
+**Areas:** Dental · Dental AI · Healthcare · Radiograph Analysis · Computer Vision · Medical Imaging · Caries Detection · Insurance · Partner API · Gated
 
-## Access Model — Partner-Gated, No Public API
+## Overjet on APIs.io
 
-Overjet is **not** a self-serve public API and does **not** publish a developer portal or API reference. As of this catalog entry there is no `developer.overjet.com`, no public API documentation, no published base URL, and no self-serve API keys.
+Everything profiled for Overjet is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/overjet/](https://apis.io/providers/overjet/)** — or go straight to one of the APIs or properties below.
 
-Overjet delivers its AI as **OEM / partner integrations** embedded directly into imaging systems and practice management software rather than as a standalone HTTP API:
+### APIs (5)
 
-- **Delivery mechanism:** connector software installed on imaging workstations plus DICOM image routing. Radiographs are automatically routed to Overjet's cloud, analyzed in roughly 2-3 minutes, and results (annotations and measurements) are surfaced in the practice management or imaging UI when the dentist reviews findings.
-- **Certified PMS/imaging integrations:** Open Dental, Dentrix (including Dentrix Ascend and Enterprise), Eaglesoft, Oryx, CareStack, plus imaging systems such as Carestream and MiPACS.
-- **Payer side:** insurance verification and AI-assisted claim review (ReviewPASS) are provided to insurance payers under enterprise agreement.
+- [Overjet Vision AI Image Analysis API](https://apis.io/apis/overjet/overjet-image-analysis-api/) — Modeled surface for submitting dental radiographs (bitewing, periapical, panoramic, CBCT) to Overjet's FDA-cleared Vision AI for analysis. In production…
+- [Overjet Detections & Findings API](https://apis.io/apis/overjet/overjet-detections-api/) — Modeled surface for retrieving structured AI findings for an analyzed radiograph - detected and outlined caries, calculus, bone level and bone-loss…
+- [Overjet Insurance Verification API](https://apis.io/apis/overjet/overjet-insurance-verification-api/) — Modeled surface for Overjet's automated dental insurance verification - checking patient eligibility and benefits and returning coverage details for a…
+- [Overjet Claims Review (ReviewPASS) API](https://apis.io/apis/overjet/overjet-claims-review-api/) — Modeled payer-side surface for AI-assisted dental claim review - Overjet's ReviewPASS applies Vision AI to attached radiographs to support automated…
+- [Overjet DSO Analytics API](https://apis.io/apis/overjet/overjet-analytics-api/) — Modeled surface for Overjet's DSO analytics - clinical and operational insights aggregated across practices and providers (diagnostic consistency, treatment…
 
-Any programmatic access is arranged privately under a partner or enterprise contract; it is not open registration. The APIs described in `apis.yml` are therefore **logical, honestly-modeled surfaces** (`endpointsModeled: true`, `accessModel: partner-gated`) that represent the capabilities Overjet exposes to integration partners. They are **not** documented public endpoints, and no base URLs, request/response schemas, or authentication details are fabricated. Because no public specification exists, this repository intentionally omits `openapi/`, `plans/`, `rate-limits/`, `finops/`, and `collections/` directories.
+### Published properties
 
-## Tags
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-- Dental
-- Dental AI
-- Healthcare
-- Radiograph Analysis
-- Computer Vision
-- Medical Imaging
-- Caries Detection
-- Insurance
-- Partner API
-- Gated
+#### Security (1)
 
-## Timestamps
+Authentication, trust centre, and vulnerability disclosure.
 
-- **Created:** 2026-07-05
-- **Modified:** 2026-07-05
+- [Overjet Domain Security](https://apis.io/security/overjet/overjet-domain-security/)
 
-## APIs (Modeled)
+## Where to find this API
 
-### Overjet Vision AI Image Analysis API
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
-Modeled surface for submitting dental radiographs (bitewing, periapical, panoramic, CBCT) to Overjet's FDA-cleared Vision AI. In production this is fed by connector software and DICOM routing rather than a public HTTP endpoint. `endpointsModeled: true`, partner-gated.
-
-### Overjet Detections & Findings API
-
-Modeled surface for retrieving structured AI findings - outlined caries, calculus, bone level and bone-loss measurements, PARLs, and anatomical structures with per-finding confidence and segmentation. `endpointsModeled: true`, partner-gated.
-
-### Overjet Insurance Verification API
-
-Modeled surface for automated dental insurance eligibility and benefits verification. Delivered as a product feature and payer integration. `endpointsModeled: true`, partner-gated.
-
-### Overjet Claims Review (ReviewPASS) API
-
-Modeled payer-side surface for AI-assisted dental claim review and automated approvals (ReviewPASS). `endpointsModeled: true`, partner-gated.
-
-### Overjet DSO Analytics API
-
-Modeled surface for clinical and operational analytics aggregated across practices and providers. `endpointsModeled: true`, partner-gated.
-
-## Pricing
-
-Overjet does not publish pricing. It is quoted by contacting sales and is scoped per practice / per organization; third-party reviews cite roughly $1,000-$2,000+ per month for smaller practices, scaling with size, features, and integrations. There is no public, self-serve plans document, so no `plans/` directory is included.
-
-## WebSocket
-
-Overjet does not document any public WebSocket API. See `review.yml`.
-
-## Common Properties
-
-- [LinkedIn](https://www.linkedin.com/company/overjet)
 - [Website](https://www.overjet.com/)
-- [Documentation / Resources](https://www.overjet.com/resources)
-- [Sign In](https://clinic.overjet.ai/signin)
-- [Book a Demo](https://info.overjet.com/hp-book-your-demo)
-- [Trust Center](https://www.overjet.com/legal/trust-center)
+- [Documentation](https://www.overjet.com/resources)
 - [Blog](https://www.overjet.com/blog)
+- [Trust centre](https://www.overjet.com/legal/trust-center)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 9.6** — minimal · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 62.5 |
+| Contract quality | 0.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 11.9 |
+| Access clarity | 7.9 |
+
+**Agent readiness 0.0** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 8.1** — Health
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/overjet/](https://apis.io/providers/overjet/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Overjet: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/overjet/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
